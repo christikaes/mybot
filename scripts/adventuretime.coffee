@@ -14,9 +14,14 @@
 # Author:
 #   Christina[@<org>]
 
+data = require './data.json'
+
 module.exports = (robot) ->
   robot.respond /hello/, (msg) ->
     msg.reply "hello!"
 
   robot.hear /orly/, ->
     msg.send "yarly"
+
+  robot.respond /adventuretime/, (msg) ->
+    msg.send msg.random data.response
